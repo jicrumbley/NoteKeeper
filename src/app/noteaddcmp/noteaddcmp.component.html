@@ -1,0 +1,6 @@
+<h2>Add Note</h2>
+<form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    Title: <input type="text" name="title" placeholder="Enter Title" formControlName="title"><br>
+    Note: <input type="text" name="note" placeholder="Enter Note" formControlName="note"><br>
+    <input type="submit" [disabled]="!formdata.valid" value="Add Note">
+</form>

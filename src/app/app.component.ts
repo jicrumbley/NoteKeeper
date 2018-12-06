@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NoteService } from './note.service';
+import { Note } from './model/note';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'noteview';
+  title = 'Note Manager';
+  
+  constructor() { }
+
+  ngOnInit()
+  {
+  }
+
+ 
+
 }

@@ -1,0 +1,20 @@
+<div *ngFor="let n of noteArr">
+    <table>
+      <tr>
+         <td colspan="4"><h2 style="margin-bottom: 0px; margin-top: 5px;">{{n.title}}</h2> </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; padding-left: 0;"><input type="checkbox" id="{{n.noteId}}check" [ngModel]="checkStatus(n.status)" (change)="changeStatus(n.noteId)"></td><td >{{n.status | titlecase}} </td>
+      </tr>
+      <tr>
+        <td></td><td id="{{n.noteId}}out">{{n.note}}</td><td *ngIf="showsave == true && n.noteId == tempid" style="vertical-align: bottom"> <input type="button" id="{{n.noteId}}save" value="Save Note" (click)="saveNote(n.noteId)"> </td>
+      </tr>
+      <tr>
+        <td></td><td>Date Created: {{n.stickyDate}} </td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Edit Note" (click)="editNote(n.noteId)"></td><td><input type="button" value="Delete Note" (click)="deleteNote(n.noteId)"></td>
+      </tr>
+    </table>
+    <hr>
+  </div>
